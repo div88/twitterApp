@@ -49,18 +49,32 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
         if(self.tweets != nil && self.tweets?.count > 0){
             var tweetObj: Tweet = self.tweets[indexPath.row] as Tweet
             cell.tweetedByName.text = tweetObj.user?.name
+            var screenName = tweetObj.user?.screenname as String!
+            cell.tweetScreenName.text = "@\(screenName)"
+             //println("Poster URL: \(screenName)")
             cell.tweetedText.text = tweetObj.text
             var posterUrl = tweetObj.user!.profileImageUrl as String!
             cell.tweeteUserImage.setImageWithURL(NSURL(string: posterUrl))
-            println("Poster URL: \(posterUrl)")
+           
             //cell.tweetedByPic.setImageWithURL(NSURL(string: posterUrl))
-
-
         }
-       
-        
-        
         return cell
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
+        if (segue.identifier == "tweetDetail") {
+            
+            let selectedIndex = self.tableView.indexPathForCell(sender as UITableViewCell)
+            var selectedRow = selectedIndex?.row
+            
+            let TweetDetailsVC:TwitterDetailViewController = segue.destinationViewController as TwitterDetailViewController
+            var tweet = tweets[selectedRow!]
+             var tweetObj: Tweet =  tweet as Tweet
+            //println("Tweet is **************:\(tweetObj.text)")
+            //var title = tweetObj.text as String!
+            TweetDetailsVC.tweetDetails = tweetObj
+            
+        }
     }
 
     /*

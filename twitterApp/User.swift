@@ -29,7 +29,7 @@ class User: NSObject {
         profileImageUrl = dictionary["profile_image_url"] as? String
         tagline = dictionary["description"] as? String
         
-        println("Name is: \(name), screenname is: \(screenname), profileImageUrl is: \(profileImageUrl), tagline is: \(tagline)")
+        //println("Name is: \(name), screenname is: \(screenname), profileImageUrl is: \(profileImageUrl), tagline is: \(tagline)")
         
     }
     
