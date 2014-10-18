@@ -13,15 +13,20 @@ class TwitterDetailViewController: UIViewController {
     
     @IBOutlet weak var tweetTextLabel: UILabel!
     var tweetDetails:Tweet!
+    @IBOutlet weak var tweetText: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        
+        tweetText.text = tweetDetails.text
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+        
     }
     
 
