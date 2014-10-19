@@ -11,3 +11,6 @@ In other words, design the custom cell with the proper Auto Layout settings. You
 5. User can tap on a tweet to view it, with controls to retweet, favorite, and reply.
 
 
+
+<img src="https://github.com/div88/twitterApp/blob/master/twitterAppV1.gif" alt="twiiterAppVersion1AssignmentWalkthrough"/>
+
