@@ -14,11 +14,21 @@ class TwitterDetailViewController: UIViewController {
     @IBOutlet weak var tweetTextLabel: UILabel!
     var tweetDetails:Tweet!
     @IBOutlet weak var tweetText: UILabel!
+    @IBOutlet weak var userProfileImage: UIImageView!
+    @IBOutlet weak var tweetUserName: UILabel!
+    @IBOutlet weak var userNaMeLight: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         
+        var posterUrl = tweetDetails.user!.profileImageUrl as String!
+        userProfileImage.setImageWithURL(NSURL(string: posterUrl))
+        
+        tweetUserName.text = tweetDetails.user?.name
+        
+        var screenName = tweetDetails.user?.screenname as String!
+        userNaMeLight.text = "@\(screenName)"
         
         tweetText.text = tweetDetails.text
     }

@@ -25,7 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             var vc = storyboard.instantiateViewControllerWithIdentifier("TweetsViewController") as UIViewController
            var navigationCtrller = self.window?.rootViewController as UINavigationController
            navigationCtrller.pushViewController(vc, animated: true)
-      //  window?.rootViewController = vc
+        //window?.rootViewController = vc
         }
         
         return true
